@@ -27,10 +27,12 @@ async function getWeather() {
 function displayWeather(data) {
     const weatherInfo = document.getElementById('weatherInfo');
     const cityName = data.name;
+    const feelsLike = data.main.feels_like;
     const temperature = data.main.temp;
     const description = data.weather[0].description;
 
-    weatherInfo.innerHTML = `<p>City: ${cityName}</p>
+    weatherInfo.innerHTML = `<p>Ciudad: ${cityName}</p>
                              <p>Temperature: ${temperature}°C</p>
+                             <p>Sensación Térmica: ${feelsLike} °C</p>
                              <p>Description: ${description}</p>`;
 }
